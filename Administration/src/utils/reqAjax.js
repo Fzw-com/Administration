@@ -2,11 +2,11 @@
 * @Author: Marte
 * @Date:   2017-12-07 17:33:59
 * @Last Modified by:   Marte
-* @Last Modified time: 2018-01-18 19:17:59
+* @Last Modified time: 2018-01-22 16:27:31
 */
 import axios from 'axios';
 import qs from 'qs';
-var baseUrl = 'http://10.3.136.214:1010/PHP/';
+var baseUrl = 'http://10.3.136.214:88/';
 var fliterUrl = function(url){
     if(url.startsWith('http')){
         return url;
@@ -36,7 +36,7 @@ export default {
         return new Promise((reslove,reject)=>{
                  axios({
                     url:fliterUrl(opt.url),
-                    data: qs.stringify(opt.parmas),
+                    data: qs.stringify(opt.params),
                     method: 'post',
                     headers: {
                         'Content-Type': 'application/x-www-form-urlencoded'

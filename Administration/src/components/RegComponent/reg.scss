@@ -4,7 +4,7 @@ html,body{
 #app{
     height:100%;
 }
-.login{
+.reg{
     height:100%;
     background-image:url(../../assets/time1.jpg);
     margin:0 auto;
@@ -12,9 +12,6 @@ html,body{
     .form-horizontal{
         .form-group{
             margin-bottom:10px;
-            .checkbox{
-                padding:0;
-            }
         }
         h3{
             text-align:center;
@@ -25,7 +22,7 @@ html,body{
         label{
             color:#ccc;
         }
-        .btn-login{
+        .btn-reg{
             margin-right:100px;
         }
         .btn{

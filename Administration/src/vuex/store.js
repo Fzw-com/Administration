@@ -1,13 +1,13 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 
-//import datagrid from '../components/datagrid/datagrid.js'
+import datagrid from '../components/datagrid/datagrid.js'
 
 Vue.use(Vuex);
 
 const store = new Vuex.Store({
     modules: {
-        //datagrid
+        datagrid
     }
 })
 
