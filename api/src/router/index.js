@@ -4,8 +4,10 @@ var app = express();
 
 app.use(bp.urlencoded({extended: false}));
 
-var rooms = require('./room')
 var goodslist = require('./list')
+var cart = require('./cart')
+var reg = require('./reglogin')
+var order = require('./order')
 
 module.exports = {
     start: function(_port){
@@ -22,8 +24,10 @@ module.exports = {
             }
         });
 
-        rooms.register(app);
         goodslist.register(app);
+        cart.register(app);
+        reg.register(app);
+        order.register(app);
         app.listen(_port,function(){
             console.log('连接成功')
         });
