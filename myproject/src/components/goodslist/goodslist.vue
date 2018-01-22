@@ -1,1 +1,0 @@
-goodslist.vue
