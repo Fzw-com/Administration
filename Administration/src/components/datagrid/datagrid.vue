@@ -52,19 +52,19 @@
         methods:{
 
             aa:function(kind){
-                var url = this.api + '?keyword='+ kind;
+                var url = this.api + '?keyword='+ this.kind + '&limit='+this.limit + '&page='+this.page;
                 http.get({url: url}).then(res => {
+                    console.log(res.data.data)
                     // console.log(res.data.data.results)
                     this.dataset = res.data.data.results;
-                   
                 })
             }
         },
         mounted(){
-            console.log(this.filterCols.length)
             this.Cols = this.filterCols ? this.filterCols: [];
             var url = this.api + '?keyword='+ this.kind + '&limit='+this.limit + '&page='+this.page;
             http.get({url: url}).then(res => {
+                console.log(res)
                 this.dataset = res.data.data.results;
                 var rowscount = res.data.data.results.length;
                

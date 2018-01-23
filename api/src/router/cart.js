@@ -13,6 +13,8 @@ module.exports ={
 	       	var sql = `
 		           	SELECT
 						*
+
+
 					FROM	
 						car	
 					INNER JOIN user on car.userid = user.id 
@@ -21,12 +23,12 @@ module.exports ={
 	           `;
 	       	db.select(sql, function(data){//查询该用户是否已存在car数据库
 		       		
-		       	var result = eval(data.data.result);
+		       	var result = eval(data.data.results);
 		       	var addgoods = {gid:gid,qty:qty};
 
-		       	if(result.length > 0){
+		       	if(results.length > 0){
 		       		//用户存在，获取底下的goodid
-			       	var cargoods = result[0].goodsid;//goodsid字符串形式
+			       	var cargoods = results[0].goodsid;//goodsid字符串形式
 			       	var _cargoods = eval(cargoods);
 	
 			       	// 遍历商品信息，查询是否该商品已存在
@@ -93,8 +95,8 @@ module.exports ={
 					userid=${_userid}
 			`;
 			db.select(sql,function(data){
-				var result = eval(data.data.result);
-				var cargoods = result[0].goodsid;//goodsid字符串形式
+				var results = eval(data.data.results);
+				var cargoods = results[0].goodsid;//goodsid字符串形式
 			    var _cargoods = eval(cargoods);//转为object
 
 			    // 遍历商品id，以获取相应的商品信息

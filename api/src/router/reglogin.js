@@ -16,7 +16,7 @@ module.exports = {
 	           		username='${username1}';
 	           `;
 	           db.select(sql, function(data){
-		           if(data.data.result.length <= 0){
+		           if(data.data.results.length <= 0){
 		           		res.send('yes');
 		           }else{
 		           		res.send('no');
@@ -42,9 +42,9 @@ module.exports = {
                 // console.log(data.data);
                 // 不存在则注册成功，
 
-                console.log(data.data.result);
-                console.log(data.data.result.length);
-                if(data.data.result.length == 0 ){
+                // console.log(data.data.result);
+                // console.log(data.data.result.length);
+                if(data.data.results.length == 0 ){
                     // 写入数据
                     var sql = `
                         INSERT INTO user (id,username,password,date) VALUES (id=id+1,'${username1}', '${password1}',now());
@@ -76,7 +76,7 @@ module.exports = {
             // 查询登录账号和密码是否已注册
             db.select(sql, function(data){
 
-            	if(data.data.result.length >0){
+            	if(data.data.results.length >0){
             		res.send('yes');//已注册
             	}else{
             		res.send('no');//未注册
